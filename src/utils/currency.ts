@@ -12,3 +12,7 @@ export const formatCurrencyMask = (value: string): string => {
     maximumFractionDigits: 2
   });
 }
+
+export const parseCurrency = (value: string): number => {
+  return parseFloat(value.replace(/\./g, '').replace(',', '.').replace('R$', '')) || 0;
+}
